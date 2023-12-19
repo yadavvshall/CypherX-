@@ -1,20 +1,28 @@
-// src/App.js
-import React from "react";
-import Form from "./components/Form";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar"; // Import the Sidebar component
-import "./App.css";
+// App.jsx
 
-function App() {
+import React, { useState } from "react";
+import Form from "./components/Form";
+import PaymentSection from "./components/PaymentSection";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+
+const App = () => {
+  const [formData, setFormData] = useState({
+    // your initial form data here
+  });
+
+  const handleFormSubmit = (newFormData) => {
+    setFormData(newFormData);
+  };
+
   return (
-    <div className="App">
-      <Sidebar /> 
-      <div className="content">
-        <Navbar />
-        <Form />
-      </div>
+    <div>
+      <Navbar />
+      <Sidebar />
+      <Form onFormSubmit={handleFormSubmit} />
+      <PaymentSection formData={formData} />
     </div>
   );
-}
+};
 
 export default App;
