@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.theme-switch {
+  cursor: pointer;
+}
+
+.dark-theme {
+  background-color: #1a202c;
+  color: #ffffff;
+}
+
+.dark-theme .display-switch,
+.dark-theme .dropdown-main {
+  background-color: #010409;
+}
+
+.dark-theme .theme-switch {
+  background-color: #040b18;
+}
+
+.dark-theme .theme-switch:hover {
+  background-color: #020a15;
+}
